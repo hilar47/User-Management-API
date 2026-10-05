@@ -1,0 +1,31 @@
+@host = http://localhost:5080
+@key = dev-secret-key-change-me
+
+### Create
+POST {{host}}/api/users
+X-API-KEY: {{key}}
+Content-Type: application/json
+
+{ "fullName": "Ada Lovelace", "email": "ada@example.com", "age": 36, "phoneNumber": "+971 50 123 4567", "role": 2 }
+
+### List (search + paging)
+GET {{host}}/api/users?page=1&pageSize=10&search=ada
+X-API-KEY: {{key}}
+
+### Get by id (replace the guid)
+GET {{host}}/api/users/00000000-0000-0000-0000-000000000000
+X-API-KEY: {{key}}
+
+### Update
+PUT {{host}}/api/users/00000000-0000-0000-0000-000000000000
+X-API-KEY: {{key}}
+Content-Type: application/json
+
+{ "fullName": "Ada King", "email": "ada@example.com", "age": 37, "role": 1 }
+
+### Delete
+DELETE {{host}}/api/users/00000000-0000-0000-0000-000000000000
+X-API-KEY: {{key}}
+
+### Missing key -> 401
+GET {{host}}/api/users

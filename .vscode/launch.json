@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug UserManagementApi",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/UserManagementApi/bin/Debug/net8.0/UserManagementApi.dll",
+      "cwd": "${workspaceFolder}/src/UserManagementApi",
+      "env": { "ASPNETCORE_ENVIRONMENT": "Development", "ASPNETCORE_URLS": "http://localhost:5080" }
+    }
+  ]
+}
